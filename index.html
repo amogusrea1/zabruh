@@ -1,0 +1,96 @@
+do you want to play :)
+<script>
+
+var t1 = {  
+      "author": {
+        "name": "yo MAMA",
+        "url": "https://www.reddit.com/r/cats/",
+        "icon_url": "https://i.imgur.com/R66g1Pe.jpg"
+      },
+      "title": "Title",
+      "url": "https://google.com/",
+      "description": "a",
+      "color": 15258703,
+      "fields": [
+        {
+          "name": "Text",
+          "value": "More text",
+          "inline": true
+        },
+        {
+          "name": "Even more text",
+          "value": "Yup",
+          "inline": true
+        },
+        {
+          "name": "Use `\"inline\": true` parameter, if you want to display fields in the same line.",
+          "value": "okay..."
+        },
+        {
+          "name": "Thanks!",
+          "value": "You're welcome :wink:"
+        }
+      ],
+      "thumbnail": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/3/38/4-Nature-Wallpapers-2014-1_ukaavUI.jpg"
+      },
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/5/5a/A_picture_from_China_every_day_108.jpg"
+      },
+      "footer": {
+        "text": "Woah! So cool! :smirk:",
+        "icon_url": "https://i.imgur.com/fKL31aD.jpg"
+      }
+};
+// ---------------------------
+
+// =================================
+
+var msg;
+function send(){
+    
+    // url is to *MY* discord server ,
+    // plz change to your own ! ( add ... '/slack' .. to the end)
+  
+  // NOTE: URLs removed because of 12 yr olds .
+  
+ //
+    var hookurl =  "";
+  
+  // Discord Server: 
+    var hookurl_02 =  "";
+  // testudinata2
+   var hookurl_03 = "";
+   var hookurl_03b = "";
+  
+   var params = {
+      username: "Codepen BOT-03",
+      embeds: [ t1 ]
+   }
+   msg = document.getElementById("content").value;
+  console.log("fuyk: " + msg);
+   if ( !msg ) {       
+         msg =  JSON.stringify(params);      
+       } 
+   
+ // var	msgJson2 = JSON.stringify(params);
+    
+    // DISABLE HERE
+    // post(hookurl, msgJson);
+     post(hookurl_03b, msg);
+    
+    // clear input text
+     document.getElementById('content').value = ' ';
+  
+}
+function post(url, jsonmsg){
+	var xhr = new XMLHttpRequest();
+	xhr.open("POST", url, true);
+	xhr.send(jsonmsg);
+      xhr.onreadystatechange = function() {
+        if(this.status != 200){
+          alert("  ");
+        }
+      }
+}
+<\script>
